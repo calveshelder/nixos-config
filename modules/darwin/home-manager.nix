@@ -3,10 +3,6 @@
 let
   user = "heldergoncalves";
   # Define the content of your file as a derivation
-  myEmacsLauncher = pkgs.writeScript "emacs-launcher.command" ''
-    #!/bin/sh
-    emacsclient -c -n &
-  '';
   sharedFiles = import ../shared/files.nix { inherit config pkgs; };
   additionalFiles = import ./files.nix { inherit user config pkgs; };
 in
@@ -40,8 +36,7 @@ in
     # This message is safe to ignore. (https://github.com/dustinlyons/nixos-config/issues/83)
 
     masApps = {
-      "1password" = 1333542190;
-      "wireguard" = 1451685025;
+      "protonpass" = 6443490629;
     };
   };
 
@@ -55,7 +50,6 @@ in
         file = lib.mkMerge [
           sharedFiles
           additionalFiles
-          { "emacs-launcher.command".source = myEmacsLauncher; }
         ];
 
         stateVersion = "23.11";
@@ -74,10 +68,6 @@ in
       enable = true;
       entries = [
         { path = "/System/Applications/News.app/"; }
-        {
-          path = toString myEmacsLauncher;
-          section = "others";
-        }
         {
           path = "${config.users.users.${user}.home}/.local/share/";
           section = "others";

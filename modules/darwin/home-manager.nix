@@ -1,7 +1,7 @@
 { config, pkgs, lib, home-manager, ... }:
 
 let
-  user = "%USER%";
+  user = "heldergoncalves";
   # Define the content of your file as a derivation
   myEmacsLauncher = pkgs.writeScript "emacs-launcher.command" ''
     #!/bin/sh
@@ -73,16 +73,7 @@ in
     dock = {
       enable = true;
       entries = [
-        { path = "/Applications/Slack.app/"; }
-        { path = "/System/Applications/Messages.app/"; }
-        { path = "/System/Applications/Facetime.app/"; }
-        { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-        { path = "/System/Applications/Music.app/"; }
         { path = "/System/Applications/News.app/"; }
-        { path = "/System/Applications/Photos.app/"; }
-        { path = "/System/Applications/Photo Booth.app/"; }
-        { path = "/System/Applications/TV.app/"; }
-        { path = "/System/Applications/Home.app/"; }
         {
           path = toString myEmacsLauncher;
           section = "others";

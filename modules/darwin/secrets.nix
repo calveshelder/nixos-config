@@ -17,13 +17,13 @@ let user = "heldergoncalves"; in
   #       so Github reads it correctly.
 
   #
-  # age.secrets."github-ssh-key" = {
-  #   symlink = true;
-  #   path = "/Users/${user}/.ssh/id_github";
-  #   file =  "${secrets}/github-ssh-key.age";
-  #   mode = "600";
-  #   owner = "${user}";
-  #   group = "staff";
-  # };
+  age.secrets."github-ssh-key" = {
+    symlink = true;
+    path = "/Users/${user}/.ssh/github";
+    file =  "${secrets}/github-ssh-key.age";
+    mode = "600";
+    owner = "${user}";
+    group = "staff";
+  };
 
 }

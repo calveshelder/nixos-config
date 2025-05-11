@@ -28,7 +28,7 @@ let user = "heldergoncalves"; in
 
   age.secrets."git-gpg-signing-key" = {
     symlink = false;
-    path = "/Users/${user}/.gnupg/gpg-signing-key.asc";
+    path = "/Users/${user}/.gnupg/git-gpg-signing-key.asc";
     file =  "${secrets}/git-gpg-signing-key.age";
     mode = "600";
     owner = "${user}";

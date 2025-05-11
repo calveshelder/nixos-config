@@ -320,11 +320,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1747000279,
-        "narHash": "sha256-frQWFTo5RUqIVcJ50euXqLa/BZdXQ7zfBj5aoE/4eic=",
+        "lastModified": 1747001360,
+        "narHash": "sha256-GwE7QHSPxemX2IrCMi9ViiBtiphJN7HeON6quy1Sbsc=",
         "ref": "refs/heads/main",
-        "rev": "418a329c9ac0cbeeb80a97641444fc5134d4629d",
-        "revCount": 5,
+        "rev": "d5236c5ede24e78e772edf243eec622c01e04128",
+        "revCount": 6,
         "type": "git",
         "url": "ssh://git@github.com/calveshelder/nix-secrets.git"
       },

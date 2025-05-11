@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
-# let
-#  githubPublicKey = "ssh-ed25519 AAAA...";
-# in
+let
+ githubPublicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDYH734HBgOlCKP3riSMaw/O1o/TkQsWif0oetdruuSi heldergoncalves@192.168.1.49";
+in
 {
 
   ".ssh/github.pub" = {

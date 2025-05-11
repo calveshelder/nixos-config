@@ -4,6 +4,8 @@ with pkgs; [
   # General packages for development and system management
   aspell
   aspellDicts.en
+  awsebcli
+  awscli2
   bash-completion
   bat
   btop
@@ -12,6 +14,7 @@ with pkgs; [
   neofetch
   openssh
   sqlite
+  ssm-session-manager-plugin
   wget
   zip
 

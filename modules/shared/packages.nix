@@ -11,7 +11,6 @@ with pkgs; [
   btop
   coreutils
   killall
-  lando
   neofetch
   openssh
   sqlite

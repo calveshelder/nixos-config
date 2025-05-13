@@ -28,10 +28,10 @@ let user = "heldergoncalves"; in
 
   age.secrets."ssh-config" = {
     symlink = true;
-    path = "/Users/${user}/.ssh/config-external";
+    path = "/Users/${user}/.ssh/config_external";
     file = "${secrets}/ssh-config.age";
     mode = "600";
     owner = "${user}";
     group = "staff";
-  }
-};
+  };
+}

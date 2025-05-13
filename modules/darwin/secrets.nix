@@ -33,5 +33,5 @@ let user = "heldergoncalves"; in
     mode = "600";
     owner = "${user}";
     group = "staff";
-  }
-}
+  };
+};

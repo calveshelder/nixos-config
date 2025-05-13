@@ -26,4 +26,11 @@ let user = "heldergoncalves"; in
     group = "staff";
   };
 
-}
+  age.secrets."ssh-config" = {
+    symlink = true;
+    path = "/Users/${user}/.ssh/config-external";
+    file = "${secrets}/ssh-config.age";
+    mode = "600";
+    owner = "${user}";
+    group = "staff";
+  };

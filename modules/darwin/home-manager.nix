@@ -67,7 +67,7 @@ in
     dock = {
       enable = true;
       entries = [
-        { path = "/System/Applications/News.app/"; }
+        { path = "/Applications/Brave Browser.app/"; }
         {
           path = "${config.users.users.${user}.home}/.local/share/";
           section = "others";

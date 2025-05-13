@@ -38,6 +38,7 @@ let user = "heldergoncalves"; in
   # Load configuration that is shared across systems
   environment.systemPackages = with pkgs; [
     neovim
+    devenv
     agenix.packages."${pkgs.system}".default
   ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 

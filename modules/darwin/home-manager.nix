@@ -68,15 +68,11 @@ in
       enable = true;
       entries = [
         { path = "/Applications/Brave Browser.app/"; }
+        { path = "/Applications/Ghostty.app/"; }
         {
           path = "${config.users.users.${user}.home}/.local/share/";
           section = "others";
           options = "--sort name --view grid --display folder";
-        }
-        {
-          path = "${config.users.users.${user}.home}/.local/share/downloads";
-          section = "others";
-          options = "--sort name --view grid --display stack";
         }
       ];
     };

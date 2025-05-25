@@ -223,41 +223,19 @@ let name = "Helder Gonçalves";
     enable = true;
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
-      sensible
       yank
       prefix-highlight
-      {
-        plugin = power-theme;
-        extraConfig = ''
-           set -g @tmux_power_theme 'gold'
-        '';
-      }
-      {
-        plugin = resurrect; # Used by tmux-continuum
-
-        # Use XDG data directory
-        # https://github.com/tmux-plugins/tmux-resurrect/issues/348
-        extraConfig = ''
-          set -g @resurrect-dir '$HOME/.cache/tmux/resurrect'
-          set -g @resurrect-capture-pane-contents 'on'
-          set -g @resurrect-pane-contents-area 'visible'
-        '';
-      }
-      {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '5' # minutes
-        '';
-      }
     ];
-    terminal = "screen-256color";
-    prefix = "C-x";
-    escapeTime = 10;
+    terminal = "tmux-256color";
+    prefix = "C-a";
+    escapeTime = 0;
     historyLimit = 50000;
     extraConfig = ''
       # Remove Vim mode delays
       set -g focus-events on
+
+      set -g status-style 'bg=#333333 fg=#5eacd3'
+      set -g base-index 1
 
       # Enable full mouse support
       set -g mouse on
@@ -268,12 +246,6 @@ let name = "Helder Gonçalves";
 
       # Unbind default keys
       unbind C-b
-      unbind '"'
-      unbind %
-
-      # Split panes, vertical or horizontal
-      bind-key x split-window -v
-      bind-key v split-window -h
 
       # Move around panes with vim-like bindings (h,j,k,l)
       bind-key -n M-k select-pane -U
@@ -300,6 +272,12 @@ let name = "Helder Gonçalves";
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
+
+      set-window-option -g mode-keys vi
+      bind -T copy-mode-vi v send-keys -X begin-selection
+      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+      bind-key -r f run-shell "tmux neww ~/.local/scripts/tmux-sessionizer"
       '';
     };
 }

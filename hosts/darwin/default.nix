@@ -37,9 +37,10 @@ let user = "heldergoncalves"; in
 
   # Load configuration that is shared across systems
   environment.systemPackages = with pkgs; [
-    neovim
-    devenv
     agenix.packages."${pkgs.system}".default
+    devenv
+    fzf
+    neovim
   ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 
   system = {
@@ -56,7 +57,6 @@ let user = "heldergoncalves"; in
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
 
-        "com.apple.mouse.tapBehavior" = 1;
         "com.apple.sound.beep.volume" = 0.0;
         "com.apple.sound.beep.feedback" = 0;
       };

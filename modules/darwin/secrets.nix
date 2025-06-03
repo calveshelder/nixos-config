@@ -18,7 +18,7 @@ let user = "heldergoncalves"; in
 
   #
   age.secrets."github-ssh-key" = {
-    symlink = false;
+    symlink = true;
     path = "/Users/${user}/.ssh/github";
     file =  "${secrets}/github-ssh-key.age";
     mode = "600";

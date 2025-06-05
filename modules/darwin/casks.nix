@@ -12,4 +12,7 @@ _:
 
   # Browsers
   "google-chrome"
+
+  # Editors
+  "obsidian"
 ]

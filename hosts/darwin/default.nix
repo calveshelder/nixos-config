@@ -4,6 +4,8 @@ let user = "helder"; in
 
 {
 
+  system.primaryUser = "helder";
+
   imports = [
     ../../modules/darwin/secrets.nix
     ../../modules/darwin/home-manager.nix

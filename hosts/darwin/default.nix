@@ -1,8 +1,10 @@
 { agenix, config, pkgs, ... }:
 
-let user = "heldergoncalves"; in
+let user = "helder"; in
 
 {
+
+  system.primaryUser = "helder";
 
   imports = [
     ../../modules/darwin/secrets.nix

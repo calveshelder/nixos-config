@@ -35,9 +35,9 @@ in
     # you may receive an error message "Redownload Unavailable with This Apple ID".
     # This message is safe to ignore. (https://github.com/dustinlyons/nixos-config/issues/83)
 
-    masApps = {
-      "protonpass" = 6443490629;
-    };
+    #masApps = {
+    #  "protonpass" = 6443490629;
+    #};
   };
 
   # Enable home-manager
@@ -67,13 +67,9 @@ in
     dock = {
       enable = true;
       entries = [
-        { path = "/Applications/Brave Browser.app/"; }
-        { path = "/Applications/Ghostty.app/"; }
-        {
-          path = "${config.users.users.${user}.home}/.local/share/";
-          section = "others";
-          options = "--sort name --view grid --display folder";
-        }
+        { path = "/Applications/Brave Browser.app"; }
+        { path = "/Applications/Ghostty.app"; }
+        { path = "/Applications/LibreOffice.app"; }
       ];
     };
   };

@@ -15,6 +15,7 @@ _:
 
   # Editors
   "obsidian"
+  "libreoffice"
 
   # Security
   "proton-pass"
